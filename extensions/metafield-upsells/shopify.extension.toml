@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "fa289b63-0af8-0ded-3f38-df631e81940f14a86fea"
 type = "ui_extension"
 name = "Metafield upsells"
 handle = "metafield-upsells"

@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "27cf2a39-acf7-7586-ec12-3184c51a3230c835e9b8"
 type = "ui_extension"
 name = "Compare At Price Discount"
 handle = "compare-at-price-discount"

@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "9a607954-b048-4f71-a80e-f840e6f2cea3386ea585"
 type = "ui_extension"
 name = "Checkbox Upsell - 2.0"
 handle = "checkbox-upsell-2-0"

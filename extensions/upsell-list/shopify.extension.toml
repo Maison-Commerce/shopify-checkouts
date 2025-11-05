@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "87d3ed1d-9912-042f-ece1-4cd70a172541eb13e82f"
 type = "ui_extension"
 name = "Upsell List"
 handle = "upsell-list"

@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "801ea146-b5e3-4d1f-ad8f-cf876690ce3b89e5a038"
 type = "ui_extension"
 name = "Trustpilot Widget"
 handle = "trustpilot-widget"

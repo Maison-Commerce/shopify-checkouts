@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "a5c76e46-d1f3-03eb-d4a2-6a51ab0ba8a9e5296398"
 type = "ui_extension"
 name = "Payment Icons"
 handle = "payment-icons"

@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "e521629d-27a2-7821-6289-5dd79830ff8742176cdc"
 type = "ui_extension"
 name = "Progress Bar"
 handle = "progress-bar"

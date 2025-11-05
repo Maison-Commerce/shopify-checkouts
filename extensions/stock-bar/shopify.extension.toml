@@ -8,7 +8,6 @@ api_version = "2024-10"
 [[extensions]]
 name = "Stock Bar"
 handle = "stock-bar"
-uid = "903a10f3-c170-1ab5-4e4d-ed0485ea74fc18de62bf"
 type = "ui_extension"
 
 

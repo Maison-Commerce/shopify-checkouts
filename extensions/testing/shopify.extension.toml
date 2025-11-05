@@ -9,7 +9,6 @@ api_version = "2025-07"
 name = "testing"
 handle = "testing"
 type = "ui_extension"
-uid = "013fad7b-475f-25b4-32b7-0da6c41293a820a3abca"
 
 # Controls where in Shopify your extension will be injected,
 # and the file that contains your extension’s source code. Learn more:

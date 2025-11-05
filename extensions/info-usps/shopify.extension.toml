@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "c078c949-aa3b-339a-801b-8ad500aec2d38cf42a32"
 type = "ui_extension"
 name = "Info USPS"
 handle = "info-usps"

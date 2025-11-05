@@ -6,7 +6,6 @@
 api_version = "2024-10"
 
 [[extensions]]
-uid = "90db3dc6-8e3c-3b54-8c01-5dab265c0f609ded72b6"
 type = "ui_extension"
 name = "Generic image"
 handle = "generic-image"

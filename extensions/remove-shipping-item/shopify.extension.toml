@@ -8,7 +8,6 @@ api_version = "2024-10"
 [[extensions]]
 name = "Remove Line Item"
 handle = "remove-line-item"
-uid = "31829ee9-a72d-dff5-d91b-20db4c5926b6af5fdbd6"
 type = "ui_extension"
 
 
