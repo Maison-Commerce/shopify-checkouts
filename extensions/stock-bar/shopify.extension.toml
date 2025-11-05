@@ -1,0 +1,117 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2024-10"
+
+[[extensions]]
+name = "Stock Bar"
+handle = "stock-bar"
+uid = "903a10f3-c170-1ab5-4e4d-ed0485ea74fc18de62bf"
+type = "ui_extension"
+
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+# network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+# [extensions.settings]
+# [[extensions.settings.fields]]
+# key = "banner_title"
+# type = "single_line_text_field"
+# name = "Banner title"
+# description = "Enter a title for the banner"
+
+[[extensions.settings.fields]]
+key = "initial_stock"
+type = "number_integer"
+name = "Initial stock amount"
+description = "Starting number of items in stock"
+default = 50
+
+[[extensions.settings.fields]]
+key = "update_interval"
+type = "number_integer"
+name = "Update interval (seconds)"
+description = "How often the stock number updates (between 30-60 recommended)"
+default = 45
+
+[[extensions.settings.fields]]
+key = "min_decrease"
+type = "number_integer"
+name = "Minimum decrease"
+description = "Minimum number to decrease stock by"
+default = 1
+
+[[extensions.settings.fields]]
+key = "max_decrease"
+type = "number_integer"
+name = "Maximum decrease"
+description = "Maximum number to decrease stock by"
+default = 3
+
+[[extensions.settings.fields]]
+key = "bar_height"
+type = "number_integer"
+name = "Bar height"
+description = "Height of the progress bar"
+
+[[extensions.settings.fields]]
+key = "corner_radius"
+type = "single_line_text_field"
+name = "Corner radius"
+description = "Choose from: base, small, large, fullyRounded, none"
+
+[[extensions.settings.fields]]
+key = "text_size"
+type = "single_line_text_field"
+name = "Text size"
+description = "Choose from: extraSmall, small, base, medium, large, extraLarge"
+
+[[extensions.settings.fields]]
+key = "text_appearance"
+type = "single_line_text_field"
+name = "Text appearance"
+description = "Choose from: accent, subdued, info, success, warning, critical, decorative"
+
+[[extensions.settings.fields]]
+key = "stock_text"
+type = "single_line_text_field"
+name = "Stock text"
+description = "Text to show for stock status. Use {stock} to show current stock number"
+
+[[extensions.settings.fields]]
+key = "image_src"
+type = "single_line_text_field"
+name = "Progress bar image"
+description = "Optional image URL for the progress bar"

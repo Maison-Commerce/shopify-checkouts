@@ -1,0 +1,72 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2024-10"
+
+[[extensions]]
+uid = "801ea146-b5e3-4d1f-ad8f-cf876690ce3b89e5a038"
+type = "ui_extension"
+name = "Trustpilot Widget"
+handle = "trustpilot-widget"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension's source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify's storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+# network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "reviews_json"
+type = "multi_line_text_field"
+name = "Reviews"
+description = "Enter reviews in the format 'title:body:name:timeago', one review per line"
+
+[[extensions.settings.fields]]
+key = "footer_text"
+type = "single_line_text_field"
+name = "Footer Text"
+description = "Text to display below the reviews (e.g., 'Showing our 4 & 5 star reviews')"
+
+[[extensions.settings.fields]]
+key = "toml_text"
+type = "single_line_text_field"
+name = "Excellent Text"
+description = "Text to display for the Excellent text"
+
+[[extensions.settings.fields]]
+key = "logo_image_url"
+type = "single_line_text_field"
+name = "Logo Image URL"
+description = "URL for the logo image to display next to the Excellent text"
+
+

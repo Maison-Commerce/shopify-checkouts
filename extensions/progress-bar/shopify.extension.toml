@@ -1,0 +1,106 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2024-10"
+
+[[extensions]]
+uid = "e521629d-27a2-7821-6289-5dd79830ff8742176cdc"
+type = "ui_extension"
+name = "Progress Bar"
+handle = "progress-bar"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+# network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "country_thresholds" 
+type = "multi_line_text_field"
+name = "Free shipping amount"
+description = "Enter the amount from which free shipping will be applied. One per line, in the format 'country:amount'"
+[[extensions.settings.fields]]
+key = "free_shipping_not_reached_text"
+type = "single_line_text_field"
+name = "Free shipping not reaced text"
+description = "Shown when free shipping is not yet applied. Use {free_shipping_amount}, {amount_left} or {total_amount}"
+[[extensions.settings.fields]]
+key = "free_shipping_reached_text"
+type = "single_line_text_field"
+name = "Free shipping reaced text"
+description = "Shown after free shipping is applied. Use {free_shipping_amount}, {amount_left} or {total_amount}"
+[[extensions.settings.fields]]
+key = "alignment"
+type = "single_line_text_field"
+name = "Text alignment"
+description = "Choose from: start, center, end"
+[[extensions.settings.fields]]
+key = "text_size"
+type = "single_line_text_field"
+name = "Text size"
+description = "Text size, choose from: extraSmall, small, base, medium, large, extraLarge"
+[[extensions.settings.fields]]
+key = "text_appearance"
+type = "single_line_text_field"
+name = "Text apprearance"
+description = "Text color, choose from: accent, subdued, info, success, warning, critical, decorative"
+[[extensions.settings.fields]]
+key = "text_appearance_reached"
+type = "single_line_text_field"
+name = "Text apprearance (reached)"
+description = "Text color when free shipping reached, choose from: accent, subdued, info, success, warning, critical, decorative"
+[[extensions.settings.fields]]
+key = "image_src"
+type = "single_line_text_field"
+name = "Image source"
+description = "Image source used for displaying the progress bar"
+[[extensions.settings.fields]]
+key = "spacing"
+type = "single_line_text_field"
+name = "Spacing between bar + title"
+description = "Choose from one of the following values: none, extraTight, tight, base, loose, extraLoose"
+[[extensions.settings.fields]]
+key = "bar_height"
+type = "number_integer"
+name = "Bar height"
+[[extensions.settings.fields]]
+key = "corner_radius"
+type = "single_line_text_field"
+name = "Corner radius"
+description = "Choose from: base, small, large, fullyRounded, none"
+[[extensions.settings.fields]]
+key = "shipping_protection_variant_id"
+type = "variant_reference"
+name = "Shipping protection variant ID"
+description = "Enter the variant ID for the shipping protection product"

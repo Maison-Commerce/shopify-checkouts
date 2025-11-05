@@ -1,0 +1,131 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2024-10"
+
+[[extensions]]
+uid = "c078c949-aa3b-339a-801b-8ad500aec2d38cf42a32"
+type = "ui_extension"
+name = "Info USPS"
+handle = "info-usps"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+# network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "heading"
+type = "single_line_text_field"
+name = "Heading text"
+description = "Heading above usps"
+[[extensions.settings.fields]]
+key = "heading_size"
+type = "single_line_text_field"
+name = "Heading size"
+description = "Choose from: extraSmall, small, base, medium, large, extraLarge"
+[[extensions.settings.fields]]
+key = "heading_appearance"
+type = "single_line_text_field"
+name = "Heading apprearance"
+description = "Choose from: accent, subdued, info, success, warning, critical, decorative"
+[[extensions.settings.fields]]
+key = "heading_alignment"
+type = "single_line_text_field"
+name = "Heading alignment"
+description = "Choose from: start, center, end"
+[[extensions.settings.fields]]
+key = "img_url1"
+type = "single_line_text_field"
+name = "Icon URL 1"
+description = "Enter a title"
+[[extensions.settings.fields]]
+key = "img_url2"
+type = "single_line_text_field"
+name = "Icon URL 2"
+[[extensions.settings.fields]]
+key = "img_url3"
+type = "single_line_text_field"
+name = "Icon URL 3"
+description = "Enter a body"
+[[extensions.settings.fields]]
+key = "usps_text"
+type = "multi_line_text_field"
+name = "USPs"
+description = "Enter like: title:body on each new line"
+[[extensions.settings.fields]]
+key = "spacing"
+type = "single_line_text_field"
+name = "Spacing between USP items"
+description = "Choose from one of the following values (none, extraTight, tight, base, loose, extraLoose)"
+[[extensions.settings.fields]]
+key = "spacing_icon_text"
+type = "single_line_text_field"
+name = "Icon-text spacing"
+description = "Choose from one of the following values (none, extraTight, tight, base, loose, extraLoose)"
+[[extensions.settings.fields]]
+key = "alignment"
+type = "single_line_text_field"
+name = "Alignment"
+description = "Choose from one of the following values (start, center, end)"
+[[extensions.settings.fields]]
+key = "icon_position"
+type = "single_line_text_field"
+name = "Icon position"
+description = "Choose from one of the following values (start, end)"
+[[extensions.settings.fields]]
+key = "icon_size"
+type = "number_integer"
+name = "Icon size"
+description = "Icon size, default is 20"
+[[extensions.settings.fields]]
+key = "title_size"
+type = "single_line_text_field"
+name = "Title size"
+description = "Title size, choose from: extraSmall, small, base, medium, large, extraLarge"
+[[extensions.settings.fields]]
+key = "title_appearance"
+type = "single_line_text_field"
+name = "Title apprearance"
+description = "Title color, choose from: accent, subdued, info, success, warning, critical, decorative"
+[[extensions.settings.fields]]
+key = "body_size"
+type = "single_line_text_field"
+name = "Body size"
+description = "Body size, choose from: extraSmall, small, base, medium, large, extraLarge"
+[[extensions.settings.fields]]
+key = "body_appearance"
+type = "single_line_text_field"
+name = "Body apprearance"
+description = "Body color, choose from: accent, subdued, info, success, warning, critical, decorative"

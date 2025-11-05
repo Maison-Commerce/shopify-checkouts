@@ -1,0 +1,146 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2024-10"
+
+[[extensions]]
+uid = "9a607954-b048-4f71-a80e-f840e6f2cea3386ea585"
+type = "ui_extension"
+name = "Checkbox Upsell - 2.0"
+handle = "checkbox-upsell-2-0"
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"
+target = "purchase.checkout.block.render"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+# network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+[extensions.settings]
+[[extensions.settings.fields]]
+key = "upsell_text"
+type = "single_line_text_field"
+name = "Upsell text"
+description = "Enter a text for the upsell"
+[[extensions.settings.fields]]
+key = "upsell_text_size"
+type = "single_line_text_field"
+name = "Upsell text size"
+description = "Choose from: extraSmall, small, base, medium, large, extraLarge"
+[[extensions.settings.fields]]
+key = "upsell_text_appearance"
+type = "single_line_text_field"
+name = "Upsell text appearance"
+description = "Choose from: accent, subdued, info, success, warning, critical, decorative"
+[[extensions.settings.fields]]
+key = "variant_reference"
+type = "variant_reference"
+name = "Variant Reference"
+description = "Enter the variant reference to show the upsell"
+[[extensions.settings.fields]]
+  key = "guarantee_price"
+  type = "number_decimal"
+name = "Price Guarantee"
+description = "Enter the price for the guarantee maximum without currency"
+[[extensions.settings.fields]]
+key = "text1"
+type = "single_line_text_field"
+name = "Sub title"
+description = "Enter sub title"
+[[extensions.settings.fields]]
+key = "text1_size"
+type = "single_line_text_field"
+name = "Sub title size"
+description = "Choose from: extraSmall, small, base, medium, large, extraLarge"
+[[extensions.settings.fields]]
+key = "text1_appearance"
+type = "single_line_text_field"
+name = "Sub title appearance"
+description = "Choose from: accent, subdued, info, success, warning, critical, decorative"
+[[extensions.settings.fields]]
+key = "text2"
+type = "single_line_text_field"
+name = "Sub-sub title"
+description = "Enter sub-sub title"
+[[extensions.settings.fields]]
+key = "text2_size"
+type = "single_line_text_field"
+name = "Sub-sub title size"
+description = "Choose from: extraSmall, small, base, medium, large, extraLarge"
+[[extensions.settings.fields]]
+key = "text2_appearance"
+type = "single_line_text_field"
+name = "Sub-sub title appearance"
+description = "Choose from: accent, subdued, info, success, warning, critical, decorative"
+[[extensions.settings.fields]]
+key = "text3"
+type = "single_line_text_field"
+name = "Body"
+description = "Enter body text"
+[[extensions.settings.fields]]
+key = "text3_size"
+type = "single_line_text_field"
+name = "Body size"
+description = "Choose from: extraSmall, small, base, medium, large, extraLarge"
+[[extensions.settings.fields]]
+key = "text3_appearance"
+type = "single_line_text_field"
+name = "Body appearance"
+description = "Choose from: accent, subdued, info, success, warning, critical, decorative"
+[[extensions.settings.fields]]
+key = "text_spacing"
+type = "single_line_text_field"
+name = "Text spacing"
+description = "Choose from: none, extraTight, tight, base, loose, extraLoose"
+[[extensions.settings.fields]]
+key = "img"
+type = "single_line_text_field"
+name = "URL Preview Image"
+description = "Enter image URL"
+[[extensions.settings.fields]]
+key = "img_size"
+type = "number_integer"
+name = "Image size"
+[[extensions.settings.fields]]
+key = "img_border_radius"
+type = "single_line_text_field"
+name = "Image border radius"
+description = "Choose from: base, small, large, fullyRounded, none"
+[[extensions.settings.fields]]
+key = "border_radius"
+type = "single_line_text_field"
+name = "Border radius"
+description = "Choose from: base, small, large, fullyRounded, none"
+[[extensions.settings.fields]]
+key = "padding"
+type = "single_line_text_field"
+name = "Padding"
+description = "Choose from: none, extraTight, tight, base, loose, extraLoose"

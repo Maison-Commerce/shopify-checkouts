@@ -1,0 +1,65 @@
+# Learn more about configuring your checkout UI extension:
+# https://shopify.dev/api/checkout-extensions/checkout/configuration
+
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2024-10"
+
+[[extensions]]
+name = "Remove Line Item"
+handle = "remove-line-item"
+uid = "31829ee9-a72d-dff5-d91b-20db4c5926b6af5fdbd6"
+type = "ui_extension"
+
+
+# Controls where in Shopify your extension will be injected,
+# and the file that contains your extension’s source code. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/extension-targets-overview
+
+[[extensions.targeting]]
+module = "./src/Checkout.tsx"
+target = "purchase.checkout.cart-line-item.render-after"
+
+[extensions.capabilities]
+# Gives your extension access to directly query Shopify’s storefront API.
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#api-access
+api_access = true
+
+# Gives your extension access to make external network calls, using the
+# JavaScript `fetch()` API. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#network-access
+# network_access = true
+
+# Loads metafields on checkout resources, including the cart,
+# products, customers, and more. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#metafields
+
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_key"
+# [[extensions.metafields]]
+# namespace = "my_namespace"
+# key = "my_other_key"
+
+# Defines settings that will be collected from merchants installing
+# your extension. Learn more:
+# https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
+
+# [extensions.settings]
+# [[extensions.settings.fields]]
+# key = "banner_title"
+# type = "single_line_text_field"
+# name = "Banner title"
+# description = "Enter a title for the banner"
+
+[[extensions.settings.fields]]
+key = "remove_line_item"
+type = "single_line_text_field"
+name = "Remove Line Item Text"
+description = "Enter the text to display on the remove line item button"
+
+[[extensions.settings.fields]]
+key = "variant_reference"
+type = "variant_reference"
+name = "Variant Reference"
+description = "Enter the variant reference to show the remove line item button"

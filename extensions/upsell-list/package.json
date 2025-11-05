@@ -1,0 +1,14 @@
+{
+  "name": "upsell-list",
+  "private": true,
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@shopify/ui-extensions-react": "2024.1.x",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
+}
